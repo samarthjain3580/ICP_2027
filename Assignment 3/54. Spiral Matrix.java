@@ -1,5 +1,5 @@
-import java.util.ArrayList;
-import java.util.List;
+// TC: O(m*n)
+// SC: O(m*n)
 class Solution {
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> list = new ArrayList<>();
@@ -42,3 +42,7 @@ class Solution {
         return list;
     }
 }
+
+
+// Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
+// Output: [1,2,3,6,9,8,7,4,5]
