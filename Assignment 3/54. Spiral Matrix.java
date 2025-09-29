@@ -1,42 +1,44 @@
 // TC: O(m*n)
 // SC: O(m*n)
+import java.util.ArrayList;
+import java.util.List;
 class Solution {
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> list = new ArrayList<>();
-        int first_col = 0;
-        int first_row = 0;
-        int last_col = matrix[0].length - 1;
-        int last_row = matrix.length - 1;
-        int total= (last_col + 1) * (last_row + 1);
+        int left = 0;
+        int top = 0;
+        int right = matrix[0].length - 1;
+        int bottom = matrix.length - 1;
+        int total = (right + 1) * (bottom + 1);
 
         while (total > 0) {
             // left to right
-            for (int i = first_col; i <= last_col && total> 0; i++) {
-                list.add(matrix[first_row][i]);
+            for (int i = left; i <= right && total> 0; i++) {
+                list.add(matrix[top][i]);
                 total--;
             }
-            first_row++;
+            top++;
 
             // downwards
-            for (int i = first_row; i <= last_row && total> 0; i++) {
-                list.add(matrix[i][last_col]);
+            for (int i = top; i <= bottom && total> 0; i++) {
+                list.add(matrix[i][right]);
                 total--;
             }
-            last_col--;
+            right--;
 
             // right to left
-            for (int i = last_col; i >= first_col && total> 0; i--) {
-                list.add(matrix[last_row][i]);
+            for (int i = right; i >= left && total> 0; i--) {
+                list.add(matrix[bottom][i]);
                 total--;
             }
-            last_row--;
+            bottom--;
 
             // upwards
-            for (int i = last_row; i >= first_row && total> 0; i--) {
-                list.add(matrix[i][first_col]);
+            for (int i = bottom; i >= top && total> 0; i--) {
+                list.add(matrix[i][left]);
                 total--;
             }
-            first_col++;
+            left++;
         }
         
         return list;
