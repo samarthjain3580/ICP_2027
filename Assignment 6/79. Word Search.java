@@ -1,3 +1,5 @@
+//TC: O(M∗N∗4^L)
+//SC: O(L)
 class Solution {
     public boolean exist(char[][] board, String word) {
         int row = board.length;
@@ -33,3 +35,6 @@ class Solution {
 
     }
 }
+
+// Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCCED"
+// Output: true
