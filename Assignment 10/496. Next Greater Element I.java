@@ -1,3 +1,6 @@
+// TC : O(N+M)
+// SC : O(N+M)
+
 class Solution {
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
         int result[] = new int[nums1.length];
